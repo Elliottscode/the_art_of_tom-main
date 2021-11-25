@@ -1,16 +1,10 @@
-import React from 'react';
-import Carousel from 'react-gallery-carousel';
-import 'react-gallery-carousel/dist/index.css';
+import React from "react";
 
-const App = () => {
-  const images = [900, 800, 700, 600, 500].map((size) => ({
-    src: `https://placedog.net/${size}/${size}`
-  }));
+export function App() {
+    return (
+        <div>
+            <h1>still working{new Date().toString()}</h1>
+        </div>
 
-  return (
-    <Carousel images={images} />
-  );
-};
-
-export default App;
-
+    );
+}
