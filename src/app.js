@@ -1,34 +1,32 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
+import Navbar from "./component/Navbar.js"
+import Home from "./pages/Home.jsx";
 
-import Home from "./src/pages/Home";
+import About from "./pages/About.jsx";
+import FAQ from "./pages/FAQ.jsx";
+import Contact from "./pages/Contact.jsx";
+import Support from "./pages/Support.jsx";
 
-import About from "./src/pages/About";
 // import Home {Banner} from "./pages/Home";
 
 
 
 export function App () {
     return (
-      <Router>
+      <BrowserRouter>
         <div>
-            <Link to="/">Home</Link>
-            
-            <Link to="/">About</Link>
+          <Navbar></Navbar>
         </div>
         <Routes>
-          <Route path="/" exact>
-            <Home />
-          </Route>
-          <Route path="/about" exact>
-            <About />
-
-
-          </Route>
-
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/faq" element={<FAQ />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/support" element={<Support />} />
         </Routes>
-      </Router>
+      </BrowserRouter>
     );
 }
 
