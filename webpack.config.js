@@ -16,8 +16,7 @@ module.exports = {
     devtool: 'inline-source-map',
     devServer: {
         port: 3010,
-        static: './dist',
-        hot: true
+        static: './dist'
         
     },
     module: {
@@ -31,7 +30,6 @@ module.exports = {
             },
             {
                 test: /\.scss$/,
-                exclude: /node_modules/,
                 use: [
                     MiniCssExtractPlugin.loader,
                     'css-loader', 
@@ -39,7 +37,7 @@ module.exports = {
                 ],
             },
             {
-                test: /\.(png|jpg|svg)$/,
+                test: /\.(png|jpg|svg|webp)$/,
                 exclude: /node_modules/,
                 use: [{
                     loader: 'file-loader',

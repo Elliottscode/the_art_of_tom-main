@@ -1,6 +1,8 @@
 import React from "react";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
+import Imgslider from "./component/slider/ImageSlider.jsx"
+
 import Navbar from "./component/Navbar.js"
 import Home from "./pages/Home.jsx";
 
@@ -15,9 +17,15 @@ import Support from "./pages/Support.jsx";
 
 export function App () {
     return (
+
+
+
       <BrowserRouter>
         <div>
           <Navbar></Navbar>
+        </div>
+        <div id="imageslider">
+          <Imgslider></Imgslider>
         </div>
         <Routes>
           <Route path="/" element={<Home />} />

@@ -1,4 +1,8 @@
 import React from "react";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+
+
+
 
 
 const Home = () => {
@@ -7,6 +11,10 @@ const Home = () => {
       <div>
         <h1>Home</h1>
         <div>Here is stuff</div>
+        <div>
+
+        </div>
+
       </div>
   
     );
