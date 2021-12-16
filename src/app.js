@@ -1,11 +1,11 @@
 import React from "react";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
-import Imgslider from "./component/slider/ImageSlider.jsx"
-
+//nav bar 
 import Navbar from "./component/Navbar.js"
-import Home from "./pages/Home.jsx";
 
+// pages 
+import Home from "./pages/Home.jsx";
 import About from "./pages/About.jsx";
 import FAQ from "./pages/FAQ.jsx";
 import Contact from "./pages/Contact.jsx";
@@ -23,9 +23,6 @@ export function App () {
       <BrowserRouter>
         <div>
           <Navbar></Navbar>
-        </div>
-        <div id="imageslider">
-          <Imgslider></Imgslider>
         </div>
         <Routes>
           <Route path="/" element={<Home />} />
