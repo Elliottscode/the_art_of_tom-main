@@ -17,7 +17,9 @@ import SwiperCore, {
 // install Swiper modules
 SwiperCore.use([Pagination]);
 
-import image1 from "../../assets/art/God.png"
+//import image100 from "../../assets/art/God.png"
+
+import {image0, image1, image2, image3, image4, image5, image6, image7, image8, image9 } from '../../assets/art/imageindex.js'
 
 //images 
 //const images = [{ image: require("../../assets/art/God.png") }]
@@ -31,15 +33,15 @@ export default function App() {
     <>
     <Swiper pagination={true} className="mySwiper">
 
-  <SwiperSlide> <img src={image1} />   </SwiperSlide>
-  <SwiperSlide>Slide 2</SwiperSlide>
-  <SwiperSlide>Slide 3</SwiperSlide>
-  <SwiperSlide>Slide 4</SwiperSlide>
-  <SwiperSlide>Slide 5</SwiperSlide>
-  <SwiperSlide>Slide 6</SwiperSlide>
-  <SwiperSlide>Slide 7</SwiperSlide>
-  <SwiperSlide>Slide 8</SwiperSlide>
-  <SwiperSlide>Slide 9</SwiperSlide>
+  <SwiperSlide>  <img src={image0} />   </SwiperSlide>
+  <SwiperSlide> <img src={image1} /> </SwiperSlide>
+  <SwiperSlide> <img src={image2} />  </SwiperSlide>
+  <SwiperSlide> <img src={image3} /> </SwiperSlide>
+  <SwiperSlide> <img src={image4} /> </SwiperSlide>
+  <SwiperSlide> <img src={image5} /> </SwiperSlide>
+  <SwiperSlide> <img src={image6} /> </SwiperSlide>
+  <SwiperSlide> <img src={image7} /></SwiperSlide>
+  <SwiperSlide> <img src={image8} /> </SwiperSlide>
   </Swiper>
     </>
   )
