@@ -9,7 +9,7 @@
     border-bottom: 20px solid rgb(0, 0, 0);
     border-top: 20px solid rgb(0, 0, 0);
     text-decoration: none;
-    
+    display: flex;
     
 }
 
@@ -17,6 +17,7 @@
 .Navbar_container {
     margin: 0;
     padding: 0;
+    display: flex;
 }
 
 
@@ -24,19 +25,20 @@
     list-style-type: none;
     margin: 0;
     padding: 0;
+    display: flex;
 
 }
 
 .text-link {
-    margin-left: 5%;
-    margin-right: 5%; 
+    
     text-decoration: none;
     list-style: none;
-    display: inline-block; 
     color: rgb(0, 0, 0);
     font-size: 200%;
+    display: inline-block;
     &:hover {
-        color:chartreuse;
+        background-color: chartreuse;
+        color:black;
     }
     
 }
