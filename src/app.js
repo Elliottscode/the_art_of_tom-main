@@ -24,7 +24,7 @@ export function App () {
 
 
       <BrowserRouter>
-        <div>
+        <div id="wrapper">
           <Navbar />
         </div>
         <Routes>
