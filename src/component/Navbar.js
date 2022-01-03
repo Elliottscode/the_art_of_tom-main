@@ -14,8 +14,8 @@ export default class Navbar extends React.Component{
 
     render() {
         return (
-            <nav className="Navbar" >
-                <div className="Navbar_container">
+            <div id="wrapper">
+                <nav className="Navbar" >
                     <ul className="nav">
                         <Link className="text-link" to="/" >Home</Link>
                         <Link className="text-link" to="/about" >About</Link>
@@ -23,9 +23,8 @@ export default class Navbar extends React.Component{
                         <Link className="text-link" to="/contact" >Contact</Link>
                         <Link className="text-link" to="/support" >Support</Link>
                     </ul>
-                </div>
-            </nav>
-        
+                </nav>
+            </div>
         );
     }
 }

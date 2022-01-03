@@ -25,7 +25,7 @@ export function App () {
 
       <BrowserRouter>
         <div>
-          <Navbar></Navbar>
+          <Navbar />
         </div>
         <Routes>
           <Route path="/" element={<Home />} />
