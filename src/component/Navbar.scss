@@ -27,7 +27,6 @@ ul {
     text-align: center;
     padding-left: 1em;
     padding-right: 1em;
-    height: 50%;
     &:hover {
         background-color: grey;
         color:white;
@@ -45,3 +44,6 @@ ul {
     
 }
 
+.text-link.active {
+    color:white;
+}
