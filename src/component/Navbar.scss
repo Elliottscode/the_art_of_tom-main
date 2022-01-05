@@ -3,47 +3,39 @@ $min-width: 100%;
 
 
 .Navbar  {
-    height: 10em;;
+    height: 5em;;
     min-height: 50px;
+    width: 100%;
     background-color: red;
-    text-align: center;
-    justify-content: center;
+    margin: 0 auto;
+
 }
 
 
 ul {
     min-height: 50px;
     list-style: none;
-    margin: 0;
-    padding: 0;
-    display: inline-block;
-    color: black;
+    // margin: 0;
+    // padding: 0;
+    display: flex;
+    justify-content: space-evenly;
 }
 
 .text-link {    
     text-decoration: none;
     color: rgb(0, 0, 0);
     font-size: 200%;
-    text-align: center;
-    padding-left: 1em;
-    padding-right: 1em;
+    // text-align: center;
+    // padding-left: 1em;
+    // padding-right: 1em;
     &:hover {
         background-color: grey;
         color:white;
+        transition-duration: 0.3s;
     }
+
     
 }
 
-.Navbar {
-    ul {
-        .text-link {
-            height: 10em;
-            text-align: center;
-        }
-    }
-    
-}
 
-.text-link.active {
-    color:white;
-}
+

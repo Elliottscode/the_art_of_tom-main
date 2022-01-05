@@ -20,13 +20,8 @@ export function App () {
 
 
   return (
-
-
-
       <BrowserRouter>
-        <div id="wrapper">
           <Navbar />
-        </div>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
