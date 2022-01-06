@@ -3,17 +3,19 @@ $min-width: 100%;
 
 
 .Navbar  {
-    height: 5em;;
-    min-height: 50px;
+   // height: 5em;;
+   // min-height: 50px;
     width: 100%;
     background-color: red;
-    margin: 0 auto;
+   // margin: 0 auto;
+    top: 0;
+    position: fixed;
 
 }
 
 
 ul {
-    min-height: 50px;
+    //min-height: 50px;
     list-style: none;
     // margin: 0;
     // padding: 0;
@@ -37,5 +39,9 @@ ul {
     
 }
 
+.isActive {
+    color: white;
+    text-decoration: underline;
+}
 
 
