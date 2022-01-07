@@ -35,13 +35,16 @@ ul {
         color:white;
         transition-duration: 0.3s;
     }
+    &:active {
+        color: white;
+        text-decoration: underline;
+
+    }
+
 
     
 }
 
-.isActive {
-    color: white;
-    text-decoration: underline;
-}
+
 
 

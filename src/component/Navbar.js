@@ -16,11 +16,11 @@ export default class Navbar extends React.Component{
         return (
                 <nav className="Navbar" >
                     <ul>
-                        <NavLink className="text-link" to="/" >Home</NavLink>
-                        <NavLink activeClassName="activeLink" className="text-link" to="/about" >About</NavLink>
-                        <NavLink activeClassName="activeLink" className="text-link" to="/faq" >FAQ</NavLink>
-                        <NavLink activeClassName="activeLink" className="text-link" to="/contact" >Contact</NavLink>
-                        <NavLink activeClassName="activeLink" className="text-link" to="/support" >Support</NavLink>
+                        <NavLink style={({ isActive }) => ({ color: isActive ? "White" : "black" })} className="text-link" to="/" >Home</NavLink>
+                        <NavLink style={({ isActive }) => ({ color: isActive ? "White" : "black" })} className="text-link" to="/about" >About</NavLink>
+                        <NavLink style={({ isActive }) => ({ color: isActive ? "White" : "black" })} className="text-link" to="/faq" >FAQ</NavLink>
+                        <NavLink style={({ isActive }) => ({ color: isActive ? "White" : "black" })} className="text-link" to="/contact" >Contact</NavLink>
+                        <NavLink style={({ isActive }) => ({ color: isActive ? "White" : "black" })} className="text-link" to="/support" >Support</NavLink>
                     </ul>
                 </nav>
         );
