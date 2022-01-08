@@ -33,9 +33,9 @@ export default function App() {
     <>
     <Swiper pagination={true} className="mySwiper">
 
-  <SwiperSlide>  <img src={image0} />   </SwiperSlide>
+  <SwiperSlide> <img src={image0} /> </SwiperSlide>
   <SwiperSlide> <img src={image1} /> </SwiperSlide>
-  <SwiperSlide> <img src={image2} />  </SwiperSlide>
+  <SwiperSlide> <img src={image2} /> </SwiperSlide>
   <SwiperSlide> <img src={image3} /> </SwiperSlide>
   <SwiperSlide> <img src={image4} /> </SwiperSlide>
   <SwiperSlide> <img src={image5} /> </SwiperSlide>
