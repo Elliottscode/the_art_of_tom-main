@@ -19,29 +19,34 @@ SwiperCore.use([Pagination]);
 
 //import image100 from "../../assets/art/God.png"
 
-import {image0, image1, image2, image3, image4, image5, image6, image7, image8, image9 } from '../../assets/art/imageindex.js'
+import artData from '../../assets/art/imageindex.js'
 
 //images 
 //const images = [{ image: require("../../assets/art/God.png") }]
 
 
+
+
 export default function App() {
-  
-  
+
+  const path = artData.map(obj => {return obj.imagePath});
+  console.log(path)
+
+
   
   return (
     <>
-    <Swiper pagination={true} className="mySwiper">
+    <Swiper pagination={true} className="mySwiper" loop={true} preloadImages={true} autoHeight={true}>
 
-  <SwiperSlide> <img src={image0} /> </SwiperSlide>
-  <SwiperSlide> <img src={image1} /> </SwiperSlide>
-  <SwiperSlide> <img src={image2} /> </SwiperSlide>
-  <SwiperSlide> <img src={image3} /> </SwiperSlide>
-  <SwiperSlide> <img src={image4} /> </SwiperSlide>
-  <SwiperSlide> <img src={image5} /> </SwiperSlide>
-  <SwiperSlide> <img src={image6} /> </SwiperSlide>
-  <SwiperSlide> <img src={image7} /></SwiperSlide>
-  <SwiperSlide> <img src={image8} /> </SwiperSlide>
+  <SwiperSlide> <img src={path[0]} /> </SwiperSlide>
+  <SwiperSlide> <img src={path[1]} /> </SwiperSlide>
+  <SwiperSlide> <img src={path[2]} /> </SwiperSlide>
+  <SwiperSlide> <img src={path[3]} /> </SwiperSlide>
+  <SwiperSlide> <img src={path[4]} /> </SwiperSlide>
+  <SwiperSlide> <img src={path[5]} /> </SwiperSlide>
+  <SwiperSlide> <img src={path[7]} /> </SwiperSlide>
+  <SwiperSlide> <img src={path[8]} /></SwiperSlide>
+  <SwiperSlide> <img src={path[9]} /> </SwiperSlide>
   </Swiper>
     </>
   )

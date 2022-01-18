@@ -8,13 +8,12 @@ const Home = () => {
 
     return (
       <div>
-          <div id="image">
+          {/* <div id="image"> */}
             <Imgslider></Imgslider>  
-          </div>
+          {/* </div> */}
        
         
 
-        <div>Here is stuff</div>
 
       </div>
   
