@@ -2,7 +2,7 @@
 html,
 body {
   position: flex;
-  height: 20%;
+  height: 100%;
 }
 
 body {
@@ -47,3 +47,18 @@ body {
   object-fit: cover;
 }
 
+
+
+@media (max-width: 1300px) {
+  .swiper {
+    width: 100%;
+    height: auto;
+
+  }
+  .swiper-slide img {
+    width: 100%;
+    height: auto;
+  }
+
+  
+}

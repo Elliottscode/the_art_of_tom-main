@@ -36,7 +36,7 @@ export default function App() {
   
   return (
     <>
-    <Swiper pagination={true} className="mySwiper" loop={true} preloadImages={true} autoHeight={true}>
+    <Swiper pagination={true} className="mySwiper" loop={true} preloadImages={true} autoHeight={true} >
 
   <SwiperSlide> <img src={path[0]} /> </SwiperSlide>
   <SwiperSlide> <img src={path[1]} /> </SwiperSlide>
