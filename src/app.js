@@ -9,7 +9,7 @@ import Home from "./pages/Home.jsx";
 import About from "./pages/About.jsx";
 import FAQ from "./pages/FAQ.jsx";
 import Contact from "./pages/Contact.jsx";
-import Support from "./pages/Support.jsx";
+import Collection from "./pages/Collection.jsx";
 
 // import Home {Banner} from "./pages/Home";
 
@@ -27,7 +27,7 @@ export function App () {
           <Route path="/about" element={<About />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/support" element={<Support />} />
+          <Route path="/collection" element={<Collection />} />
         </Routes>
       </BrowserRouter>
     );

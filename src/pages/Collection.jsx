@@ -1,15 +1,15 @@
 import React from "react";
 
 
-const Support = () => {
+const Collection = () => {
 
     return (
       <div>
-        <h1>Support</h1>
+        <h1>Collection</h1>
       </div>
     );
   
 };
   
 
-export default Support;
+export default Collection;
