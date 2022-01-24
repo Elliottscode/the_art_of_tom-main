@@ -9,6 +9,8 @@ import image7 from './land.webp';
 import image8 from './meme.webp';
 import image9 from './MemoryRepeated.webp';
 
+
+
 const artData = [
 
     {
@@ -67,18 +69,5 @@ const artData = [
 
 
 
-// export {
-//     image0, 
-//     image1,
-//     image2,
-//     image3,
-//     image4,
-//     image5,
-//     image6,
-//     image7,
-//     image8, 
-//     image9
-
-// };
 
 export default artData;
