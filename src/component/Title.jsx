@@ -17,7 +17,7 @@ const Title = () => {
     return (
         <div className= "Titles">
             
-                {imageTitle.map(img => <a href={img.imagePath} target="_blank"><div>{img.title}</div></a>)}
+                {imageTitle.map(img => <a href={img.imagePath} target="_blank"><div className="title">{img.title}</div></a>)}
             
             
         </div>
