@@ -3,13 +3,13 @@ import imageTitle from "../assets/art/imageindex"
 import { Link } from "react-router-dom";
 
 
-
+// get list of titles and names from imageIndex 
 const artTitles = imageTitle.map(img => img.title);
 const imgAddress = imageTitle.map(imgt => imgt.imagePath);
       
 console.log(imgAddress);
 
-
+// component for displaying image data 
 const Title = () => {
 
 
