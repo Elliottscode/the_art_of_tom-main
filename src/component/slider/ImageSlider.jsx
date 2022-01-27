@@ -28,9 +28,9 @@ import artData from '../../assets/art/imageindex.js'
 
 
 export default function App() {
-
+  // art paths 
   const path = artData.map(obj => {return obj.imagePath});
-
+  // randomise art 
   function shuffleArray(array) {
     let currentIndex = array.length, randomIndex;
 
