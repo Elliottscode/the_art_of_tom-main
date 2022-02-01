@@ -3,12 +3,13 @@ $text-color: black;
 
 html,
 
+
 body {
     background-color: rgb(255, 255, 255);
     min-height: 100%;
     margin: 0;
     padding: 0;
-    margin-bottom: 5em;
+    margin-bottom: 4.3em;
     position: relative;
 }
 
@@ -18,16 +19,17 @@ h1{
     color:red;
 }
 
-
-
-#image {
+.home {
+    background-color: black;
+    position:absolute;
     top: 0;
-    height: 100vh;
-    width: 100%;
-    padding-bottom: 10em;
-
+    right: 0;
+    bottom: 0;
+    left:0;
 
 }
+
+
 
 
 .title {
