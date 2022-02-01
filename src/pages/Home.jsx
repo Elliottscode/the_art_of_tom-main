@@ -8,7 +8,7 @@ const Home = () => {
 
     return (
       
-      <div>
+     // <div>
         <body className="home">    
             <Imgslider></Imgslider>  
           
@@ -16,7 +16,7 @@ const Home = () => {
         
 
         </body>
-      </div>
+     // </div>
   
     );
   

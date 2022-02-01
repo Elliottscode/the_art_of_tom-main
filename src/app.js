@@ -4,6 +4,9 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 //nav bar 
 import Navbar from "./component/nav/Navbar.js"
 
+// top scroller 
+import  ScrollToTop  from "./component/ScrollToTop.js";
+
 // pages 
 import Home from "./pages/Home.jsx";
 import About from "./pages/About.jsx";
@@ -22,6 +25,7 @@ export function App () {
   return (
       <BrowserRouter>
           <Navbar />
+          <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
