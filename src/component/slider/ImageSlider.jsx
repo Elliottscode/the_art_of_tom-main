@@ -46,6 +46,7 @@ export default function App() {
   shuffleArray(path);
   
   return (
+    <div>
     <>
     <Swiper pagination={true} className="mySwiper" loop={true} preloadImages={true} autoHeight={true} >
 
@@ -60,6 +61,24 @@ export default function App() {
   <SwiperSlide> <img src={path[9]} /> </SwiperSlide>
   </Swiper>
     </>
+  
+  <>
+  <Swiper pagination={true} className="mySwiper2" loop={true}>
+  <SwiperSlide> <img src={path[0]} /> </SwiperSlide>
+  <SwiperSlide> <img src={path[1]} /> </SwiperSlide>
+  <SwiperSlide> <img src={path[2]} /> </SwiperSlide>
+  <SwiperSlide> <img src={path[3]} /> </SwiperSlide>
+  <SwiperSlide> <img src={path[4]} /> </SwiperSlide>
+  <SwiperSlide> <img src={path[5]} /> </SwiperSlide>
+  <SwiperSlide> <img src={path[7]} /> </SwiperSlide>
+  <SwiperSlide> <img src={path[8]} /></SwiperSlide>
+  <SwiperSlide> <img src={path[9]} /> </SwiperSlide>
+
+  </Swiper>
+
+  </>
+  </div>
+  
   )
 }
 

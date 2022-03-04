@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-
+//import Imgslider from "./component/slider/ImageSlider.jsx"
 //nav bar 
 import Navbar from "./component/nav/Navbar.js"
 
@@ -24,8 +24,8 @@ export function App () {
 
   return (
       <BrowserRouter>
-          <Navbar />
-          <ScrollToTop />
+          {/* <Navbar />
+          <ScrollToTop /> */}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
@@ -34,6 +34,7 @@ export function App () {
           <Route path="/collection" element={<Collection />} />
         </Routes>
       </BrowserRouter>
+
     );
 }
 
