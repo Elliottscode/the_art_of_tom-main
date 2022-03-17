@@ -29,7 +29,11 @@ import artData from '../../assets/art/imageindex.js'
 
 export default function App() {
 
+  const originalPath = artData.map(obj => {return obj.imagePath});
+  const originalOrder = artData.map(obj => {return obj.id});
+
   const slide = [];
+  const slide2 = [];
   // art paths 
   const path = artData.map(obj => {return obj.imagePath});
   // randomise art 
@@ -47,7 +51,11 @@ export default function App() {
   }
   shuffleArray(path);
   path.forEach((item, index)=>{
-    slide.push(<SwiperSlide> <img src={path[index]} /> </SwiperSlide>)
+    slide.push(<SwiperSlide key={originalOrder[index]}> <img src={path[index]} /> </SwiperSlide>)
+  })
+  console.log(slide)
+  originalPath.forEach((item, index)=>{ 
+    slide2.push(<SwiperSlide key={originalOrder[index]}> <img src={originalPath[index]} /></SwiperSlide>)
   })
   
   return (
@@ -60,15 +68,7 @@ export default function App() {
   
   <>
   <Swiper className="mySwiper2" loop={true}>
-  <SwiperSlide> <img src={path[0]} /> </SwiperSlide>
-  <SwiperSlide> <img src={path[1]} /> </SwiperSlide>
-  <SwiperSlide> <img src={path[2]} /> </SwiperSlide>
-  <SwiperSlide> <img src={path[3]} /> </SwiperSlide>
-  <SwiperSlide> <img src={path[4]} /> </SwiperSlide>
-  <SwiperSlide> <img src={path[5]} /> </SwiperSlide>
-  <SwiperSlide> <img src={path[7]} /> </SwiperSlide>
-  <SwiperSlide> <img src={path[8]} /></SwiperSlide>
-  <SwiperSlide> <img src={path[9]} /> </SwiperSlide>
+    {slide2}
 
   </Swiper>
 

@@ -9,13 +9,13 @@ const Home = () => {
     return (
       
      // <div>
-        <body className="home">    
+        <div className="home">    
             <Imgslider></Imgslider>  
           
        
         
 
-        </body>
+        </div>
      // </div>
   
     );
