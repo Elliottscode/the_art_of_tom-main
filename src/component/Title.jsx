@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 const artTitles = imageTitle.map(img => img.title);
 const imgAddress = imageTitle.map(imgt => imgt.imagePath);
       
-console.log(imgAddress);
+
 
 // component for displaying image data 
 const Title = () => {

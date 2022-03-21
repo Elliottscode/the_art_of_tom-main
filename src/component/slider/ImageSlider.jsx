@@ -33,29 +33,9 @@ export default function App() {
   const originalOrder = artData.map(obj => {return obj.id});
 
   const slide = [];
-  const slide2 = [];
-  // art paths 
-  const path = artData.map(obj => {return obj.imagePath});
-  // randomise art 
-  function shuffleArray(array) {
-    let currentIndex = array.length, randomIndex;
 
-    while (currentIndex != 0 ) {
-      randomIndex = Math.floor(Math.random() * currentIndex);
-      currentIndex--;
-
-      [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
-
-    }
-    return array
-  }
-  shuffleArray(path);
-  path.forEach((item, index)=>{
-    slide.push(<SwiperSlide key={originalOrder[index]}> <img src={path[index]} /> </SwiperSlide>)
-  })
-  console.log(slide)
   originalPath.forEach((item, index)=>{ 
-    slide2.push(<SwiperSlide key={originalOrder[index]}> <img src={originalPath[index]} /></SwiperSlide>)
+    slide.push(<SwiperSlide key={originalOrder[index]}> <img src={originalPath[index]} /></SwiperSlide>)
   })
   
   return (
@@ -66,13 +46,6 @@ export default function App() {
     </Swiper>
     </>
   
-  <>
-  <Swiper className="mySwiper2" loop={true}>
-    {slide2}
-
-  </Swiper>
-
-  </>
   </div>
   
   )
