@@ -56,7 +56,7 @@ export default function App() {
     return (
         <div>
         <>
-        <Swiper id="randomSwiper" className="swiper" preloadImages={true} loop={true} onSlideChange={console.log()} >
+        <Swiper id="randomSwiper" className="swiper" preloadImages={true} loop={true} onSlideChange={setTimeout(() => this.seState({message:{}}), 3000)} >
             {randomPath}
         </Swiper>
         
