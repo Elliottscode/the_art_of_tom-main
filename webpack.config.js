@@ -38,7 +38,7 @@ module.exports = {
                 ],
             },
             {
-                test: /\.(png|jpg|svg|webp)$/,
+                test: /\.(png|jpg|svg|webp|ico)$/,
                 exclude: /node_modules/,
                 use: [{
                     loader: 'file-loader',
@@ -47,5 +47,6 @@ module.exports = {
             }
         ]
     },
-    plugins: [new MiniCssExtractPlugin(), new webpack.HotModuleReplacementPlugin()]
+    plugins: [new MiniCssExtractPlugin(), new webpack.HotModuleReplacementPlugin(), new HtmlWebpackPlugin({filename:"/dist", favicon:"./src/favicon.ico"})
+    ]
 };

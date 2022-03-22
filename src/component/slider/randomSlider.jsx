@@ -45,7 +45,7 @@ export default function App() {
     }
 
     shuffleArray(pathData);
-    
+   
 
     for (let i = 0; i < [pathData.length]; i++ ) {
         randomPath.push(<SwiperSlide key={pathData[i][0]}><img src={pathData[i][1]}  alt={pathData[i][2]}/></SwiperSlide>)
@@ -56,9 +56,10 @@ export default function App() {
     return (
         <div>
         <>
-        <Swiper id="randomSwiper" className="swiper" preloadImages={true} loop={true} onSlideChange={setTimeout(() => this.seState({message:{}}), 3000)} >
+        <Swiper id="randomSwiper" className="swiper" preloadImages={true} loop={true} >
             {randomPath}
         </Swiper>
+        
         
         
         
