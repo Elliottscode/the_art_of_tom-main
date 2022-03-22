@@ -12,6 +12,7 @@ module.exports = {
     output: {
         path: path.join(__dirname, 'dist'),
         filename: 'index.bundle.js',
+        clean:true,
     },
     devtool: 'inline-source-map',
     devServer: {
@@ -30,7 +31,7 @@ module.exports = {
                 }
             },
             {
-                test: /\.scss$/,
+                test: /\.(scss|css)$/,
                 use: [
                     MiniCssExtractPlugin.loader,
                     'css-loader', 

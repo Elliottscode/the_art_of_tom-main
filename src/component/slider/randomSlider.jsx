@@ -9,7 +9,7 @@ import "./sliderStyles.scss"
 
 
 import SwiperCore, {
-    Pagination
+    Pagination, EffectCube
 } from 'swiper';
 
 
@@ -56,7 +56,7 @@ export default function App() {
     return (
         <div>
         <>
-        <Swiper id="randomSwiper" className="swiper" preloadImages={true} loop={true} >
+        <Swiper id="randomSwiper" className="swiper" preloadImages={true} loop={true} draggable={true} >
             {randomPath}
         </Swiper>
         
