@@ -5,8 +5,11 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/scss";
 import "swiper/scss/pagination"
 
+// my added styles 
 import "./sliderStyles.scss"
 
+// art data 
+import artData from "../../assets/art/imageindex";
 
 import SwiperCore, {
     Pagination, EffectCube
@@ -16,9 +19,7 @@ import SwiperCore, {
 SwiperCore.use([Pagination]);
 
 
-// art data 
 
-import artData from "../../assets/art/imageindex";
 
 
 export default function App() {
@@ -50,12 +51,18 @@ export default function App() {
     for (let i = 0; i < [pathData.length]; i++ ) {
         randomPath.push(<SwiperSlide key={pathData[i][0]}><img src={pathData[i][1]}  alt={pathData[i][2]}/></SwiperSlide>)
     }
+    const slideTitle = "";
+    function titleUpdate(index) {
+        slideTitle = pathData[index][2]; 
+        return slideTitle;
+    }
 
     console.log(randomPath);
 
     return (
         <div>
         <>
+        <p id="titleBox" >this</p>
         <Swiper id="randomSwiper" className="swiper" preloadImages={true} loop={true} draggable={true} >
             {randomPath}
         </Swiper>
