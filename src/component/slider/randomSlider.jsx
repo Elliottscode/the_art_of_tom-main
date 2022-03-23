@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 // Swiper react components 
 import { Swiper, SwiperSlide } from "swiper/react";
 // Import swiper styles 
@@ -25,8 +25,7 @@ SwiperCore.use([Pagination]);
 export default function App() {
 
     const pathData = artData.map(obj => {return [obj.id, obj.imagePath, obj.title, obj.category ]});
-    console.log(pathData);
-    const idData = artData.map(obj => {return obj.id});
+
 
 
     const randomPath = [];
@@ -51,19 +50,24 @@ export default function App() {
     for (let i = 0; i < [pathData.length]; i++ ) {
         randomPath.push(<SwiperSlide key={pathData[i][0]}><img src={pathData[i][1]}  alt={pathData[i][2]}/></SwiperSlide>)
     }
-    const slideTitle = "";
+    console.log(randomPath)
+
+    let slideTitle = "";
+    
     function titleUpdate(index) {
+        console.log(index)
         slideTitle = pathData[index][2]; 
         return slideTitle;
     }
+    let first = titleUpdate(0);
+    let [artTitle, setTitle] = useState(first);
 
-    console.log(randomPath);
 
     return (
         <div>
         <>
-        <p id="titleBox" >this</p>
-        <Swiper id="randomSwiper" className="swiper" preloadImages={true} loop={true} draggable={true} >
+        <p id="titleBox" >{artTitle}</p>
+        <Swiper id="randomSwiper" className="swiper" preloadImages={true} loop={true} draggable={true}  onSlideChange={index => setTitle(titleUpdate((index.activeIndex - 1)))} >
             {randomPath}
         </Swiper>
         
