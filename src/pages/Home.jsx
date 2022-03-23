@@ -14,7 +14,7 @@ const Home = () => {
      // <div>
         <div className="home">
             <RandomSlider></RandomSlider>
-            <RandomSlider></RandomSlider>
+            {/* <RandomSlider></RandomSlider> */}
             {/* <Imgslider></Imgslider>   */}
           
        

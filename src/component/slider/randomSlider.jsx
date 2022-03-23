@@ -18,20 +18,11 @@ import SwiperCore, {
 
 SwiperCore.use([Pagination]);
 
-
-
-
-
-export default function App() {
-
-    const pathData = artData.map(obj => {return [obj.id, obj.imagePath, obj.title, obj.category ]});
-
-
-
-    const randomPath = [];
-
-
-    function shuffleArray(array) {
+// only ran once 
+const pathData = artData.map(obj => {return [obj.id, obj.imagePath, obj.title, obj.category ]});
+const randomPath = [];
+let slideTitle = "";
+function shuffleArray(array) {
         let currentIndex = array.length, randomIndex;
     
         while (currentIndex != 0 ) {
@@ -42,24 +33,40 @@ export default function App() {
     
         }
         return array
-    }
+}
 
-    shuffleArray(pathData);
-   
-
-    for (let i = 0; i < [pathData.length]; i++ ) {
+shuffleArray(pathData);
+for (let i = 0; i < [pathData.length]; i++ ) {
         randomPath.push(<SwiperSlide key={pathData[i][0]}><img src={pathData[i][1]}  alt={pathData[i][2]}/></SwiperSlide>)
     }
-    console.log(randomPath)
+    
 
-    let slideTitle = "";
+
+
+export default function App() {
+
+    
+
+
+
+    
+
+
+
+   
+
+    
     
     function titleUpdate(index) {
+        console.log(index)
+        if (index === -1) {
+            index = 259;
+        }
         console.log(index)
         slideTitle = pathData[index][2]; 
         return slideTitle;
     }
-    let first = titleUpdate(0);
+    const first = titleUpdate(0);
     let [artTitle, setTitle] = useState(first);
 
 
