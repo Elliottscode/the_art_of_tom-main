@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 // Swiper react components 
 import { Swiper, SwiperSlide } from "swiper/react";
 // Import swiper styles 
@@ -59,22 +59,18 @@ export default function App() {
     
     function titleUpdate(index) {
         console.log(index)
-        if (index === -1) {
-            index = 259;
-        }
-        console.log(index)
         slideTitle = pathData[index][2]; 
         return slideTitle;
     }
-    const first = titleUpdate(0);
-    let [artTitle, setTitle] = useState(first);
+    // changes title for slide change  
+    let [artTitle, setTitle] = useState(0);
 
 
     return (
         <div>
         <>
         <p id="titleBox" >{artTitle}</p>
-        <Swiper id="randomSwiper" className="swiper" preloadImages={true} loop={true} draggable={true}  onSlideChange={index => setTitle(titleUpdate((index.activeIndex - 1)))} >
+        <Swiper id="randomSwiper" className="swiper" preloadImages={true} loop={true} draggable={true}  onSlideChange={index => setTitle(titleUpdate((index.realIndex)))} >
             {randomPath}
         </Swiper>
         
