@@ -69,7 +69,7 @@ export default function App() {
     return (
         <div>
         <>
-        <p id="titleBox" >{artTitle}</p>
+        <div className="titleBox"><div id="titleText" >{artTitle}</div></div>
         <Swiper id="randomSwiper" className="swiper" preloadImages={true} loop={true} draggable={true}  onSlideChange={index => setTitle(titleUpdate((index.realIndex)))} >
             {randomPath}
         </Swiper>
