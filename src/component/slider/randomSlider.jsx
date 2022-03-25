@@ -65,12 +65,29 @@ export default function App() {
     // changes title for slide change  
     let [artTitle, setTitle] = useState(0);
 
+    // hides the title after x seconds 
+    const [showElement, setShowElement] = useState(true);
+    
+    function titleDisapear() {
+        setTimeout(function () {
+            setShowElement(false);
+            console.log("here");
+        }, 10000);
+    }
+    
+    useEffect(() => {
+        titleDisapear()
+    }, []);
+    
+    
+    
+
 
     return (
         <div>
         <>
-        <div className="titleBox"><div id="titleText" >{artTitle}</div></div>
-        <Swiper id="randomSwiper" className="swiper" preloadImages={true} loop={true} draggable={true}  onSlideChange={index => setTitle(titleUpdate((index.realIndex)))} >
+        {showElement ? (<div className="titleBox"><div id="titleText" >{artTitle}</div></div>) : (<div></div>)}{" "}
+        <Swiper id="randomSwiper" className="swiper" preloadImages={true} loop={true} draggable={true}  onSlideChange={index => setTitle(titleUpdate((index.realIndex)), setShowElement(true), titleDisapear())} >
             {randomPath}
         </Swiper>
         
