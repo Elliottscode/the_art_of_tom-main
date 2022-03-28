@@ -59,6 +59,7 @@ export default function App() {
     
     function titleUpdate(index) {
         console.log(index)
+        setShowElement(true)
         slideTitle = pathData[index][2]; 
         return slideTitle;
     }
@@ -68,7 +69,7 @@ export default function App() {
     // hides the title after x seconds 
     const [showElement, setShowElement] = useState(true);
     
-    function titleDisapear() {
+    function titleDisapear() {   
         setTimeout(function () {
             setShowElement(false);
             console.log("here");
@@ -87,7 +88,7 @@ export default function App() {
         <div>
         <>
         {showElement ? (<div className="titleBox"><div id="titleText" >{artTitle}</div></div>) : (<div></div>)}{" "}
-        <Swiper id="randomSwiper" className="swiper" preloadImages={true} loop={true} draggable={true} preventInteractionOnTransition={true} onSlideChange={index => setTitle(titleUpdate((index.realIndex)), setShowElement(true), titleDisapear())} >
+        <Swiper id="randomSwiper" className="swiper" preloadImages={true} loop={true} draggable={true} preventInteractionOnTransition={true} onTransitionEnd={titleDisapear()} onSlideChange={index => setTitle(titleUpdate(index.realIndex))} >
             {randomPath}
         </Swiper>
         
