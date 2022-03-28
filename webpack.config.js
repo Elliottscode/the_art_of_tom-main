@@ -39,12 +39,8 @@ module.exports = {
                 ],
             },
             {
-                test: /\.(png|jpg|svg|webp|ico)$/,
-                exclude: /node_modules/,
-                use: [{
-                    loader: 'file-loader',
-                    options: {}
-                }]
+                test: /\.(?:png|jpg|svg|webp|ico)$/i,
+                type: 'asset/resource',
             }
         ]
     },

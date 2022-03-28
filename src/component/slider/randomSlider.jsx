@@ -87,7 +87,7 @@ export default function App() {
         <div>
         <>
         {showElement ? (<div className="titleBox"><div id="titleText" >{artTitle}</div></div>) : (<div></div>)}{" "}
-        <Swiper id="randomSwiper" className="swiper" preloadImages={true} loop={true} draggable={true}  onSlideChange={index => setTitle(titleUpdate((index.realIndex)), setShowElement(true), titleDisapear())} >
+        <Swiper id="randomSwiper" className="swiper" preloadImages={true} loop={true} draggable={true} preventInteractionOnTransition={true} onSlideChange={index => setTitle(titleUpdate((index.realIndex)), setShowElement(true), titleDisapear())} >
             {randomPath}
         </Swiper>
         
