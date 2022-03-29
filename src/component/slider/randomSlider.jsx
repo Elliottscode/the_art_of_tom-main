@@ -49,7 +49,6 @@ export default function App() {
     
     function titleUpdate(index) {
         console.log(index)
-        setShowElement(true)
         slideTitle = pathData[index][2]; 
         return slideTitle;
     }
