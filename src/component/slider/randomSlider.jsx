@@ -49,6 +49,7 @@ export default function App() {
     
     function titleUpdate(index) {
         console.log(index)
+        setShowElement(true)
         slideTitle = pathData[index][2]; 
         return slideTitle;
     }
@@ -58,8 +59,7 @@ export default function App() {
     // hides the title after x seconds 
     const [showElement, setShowElement] = useState(true);
     
-    function titleDisapear() {
-        setShowElement(true)   
+    function titleDisapear() {   
         setTimeout(function () {
             setShowElement(false);
             console.log("here");
