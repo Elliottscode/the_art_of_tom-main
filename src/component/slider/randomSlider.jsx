@@ -46,16 +46,6 @@ for (let i = 0; i < [pathData.length]; i++ ) {
 export default function App() {
 
     
-
-
-
-    
-
-
-
-   
-
-    
     
     function titleUpdate(index) {
         console.log(index)
@@ -69,11 +59,12 @@ export default function App() {
     // hides the title after x seconds 
     const [showElement, setShowElement] = useState(true);
     
-    function titleDisapear() {   
+    function titleDisapear() {
+        setShowElement(true)   
         setTimeout(function () {
             setShowElement(false);
             console.log("here");
-        }, 10000);
+        }, 1000);
     }
     
     useEffect(() => {
@@ -96,10 +87,6 @@ export default function App() {
         
         
         </>
-
-
-
-
 
 
         </div>
