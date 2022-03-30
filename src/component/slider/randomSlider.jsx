@@ -50,6 +50,12 @@ export default function App() {
     function titleUpdate(index) {
         console.log(index)
         setShowElement(true)
+        console.log(typeof titleTimer)
+        if (typeof titleTimer !== 'undefined') {
+            // the variable is defined
+            console.log("whoo")
+            clearTimeout(titleTimer);
+        }
         slideTitle = pathData[index][2]; 
         return slideTitle;
     }
@@ -58,12 +64,12 @@ export default function App() {
 
     // hides the title after x seconds 
     const [showElement, setShowElement] = useState(true);
-    
+    let titleTimer;
     function titleDisapear() {   
-        setTimeout(function () {
+        titleTimer = setTimeout(function () {
             setShowElement(false);
             console.log("here");
-        }, 1000);
+        }, 10000);
     }
     
     useEffect(() => {
