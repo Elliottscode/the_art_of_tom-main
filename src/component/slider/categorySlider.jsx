@@ -28,6 +28,7 @@ const categoryData = artData.map(obj => {return obj.category});
 function createCategory () {
     for (let i = 0; i < artData.length; i++) {
         list = list.filter((x, i, categoryData) => categoryData.indexOf(x) == i);
+        
     }
 } 
 
