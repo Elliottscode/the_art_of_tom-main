@@ -24,10 +24,10 @@ import SwiperCore, { Pagination } from "swiper";
 SwiperCore.use([Pagination]);
 
 const pathData = artData.map(obj => {return [obj.id, obj.imagePath, obj.title, obj.category]})
-const categoryData = [];
+const categoryData = artData.map(obj => {return obj.category});
 function createCategory () {
     for (let i = 0; i < artData.length; i++) {
-        categoryData.push()
+        list = list.filter((x, i, categoryData) => categoryData.indexOf(x) == i);
     }
 } 
 
