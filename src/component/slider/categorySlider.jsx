@@ -27,8 +27,8 @@ const pathData = artData.map(obj => {return [obj.id, obj.imagePath, obj.title, o
 const categoryData = artData.map(obj => {return obj.category});
 function createCategory () {
     for (let i = 0; i < artData.length; i++) {
-        list = list.filter((x, i, categoryData) => categoryData.indexOf(x) == i);
-        
+        let list = list.filter((x, i, categoryData) => categoryData.indexOf(x) == i);
+        list.forEach()
     }
 } 
 
