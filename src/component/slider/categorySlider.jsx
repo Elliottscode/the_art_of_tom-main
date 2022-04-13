@@ -46,7 +46,8 @@ function addToCategory (pathData, category2, uniqueCatogorys) {
        for (let j = 0; j < uniqueCatogorys.length; j ++) {
            console.log(pathData[i][3])
            if (pathData[i][3] === uniqueCatogorys[j] ) {
-               category2[j].push(<SwiperSlide key={pathData[i][0]}><img src={pathData[i][1]}  alt={pathData[i][2]}/></SwiperSlide>)
+               let objTitle = uniqueCatogorys[j];
+               category2["'" + objTitle + "'"].push(<SwiperSlide key={pathData[i][0]}><img src={pathData[i][1]}  alt={pathData[i][2]}/></SwiperSlide>)
                
            }
            else return
