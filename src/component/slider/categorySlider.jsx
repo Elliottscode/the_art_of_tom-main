@@ -38,7 +38,7 @@ function createCategory (uniqueCatogorys, category2) {
         category2[uniqueCatogorys[i]] = {};
         
     }
-    return
+    return category2;
 } 
 
 function addToCategory (pathData, category2, uniqueCatogorys) {
@@ -47,7 +47,7 @@ function addToCategory (pathData, category2, uniqueCatogorys) {
            console.log(pathData[i][3])
            if (pathData[i][3] === uniqueCatogorys[j] ) {
                let objTitle = uniqueCatogorys[j];
-               category2["'" + objTitle + "'"].push(<SwiperSlide key={pathData[i][0]}><img src={pathData[i][1]}  alt={pathData[i][2]}/></SwiperSlide>)
+               category2[j].push(<SwiperSlide key={pathData[i][0]}><img src={pathData[i][1]}  alt={pathData[i][2]}/></SwiperSlide>)
                
            }
            else return
@@ -57,8 +57,9 @@ function addToCategory (pathData, category2, uniqueCatogorys) {
 
 createCategory(uniqueCatogorys, category2);
 console.log(category2)
+console.log("this")
 addToCategory(pathData, category2, uniqueCatogorys);
-console.log(category2)
+
 
 
 export default function App() {
