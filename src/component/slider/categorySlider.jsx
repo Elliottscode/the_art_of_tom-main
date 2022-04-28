@@ -30,24 +30,33 @@ console.log(uniqueCatogorys)
 const category2 = [];
 
 
-const culture = [];
-const politics = [];
+
 
 function createCategory (uniqueCatogorys, category2) {
     for (let i = 0; i < uniqueCatogorys.length; i++) {
-        category2[uniqueCatogorys[i]] = {};
+        category2[uniqueCatogorys[i]] = [];
         
     }
     return category2;
 } 
+
+
+function groupBy(ar, prop) {
+    let cat = {};
+    for (let i=0; i < xs.length; i++) {
+        let p = xs[i][prop];
+        if (!cat[p]) { cat[p] = []; }
+        cat[p].push(xs[i]);
+    }
+}
 
 function addToCategory (pathData, category2, uniqueCatogorys) {
     for (let i = 0; i < pathData.length; i ++) {
        for (let j = 0; j < uniqueCatogorys.length; j ++) {
            console.log(pathData[i][3])
            if (pathData[i][3] === uniqueCatogorys[j] ) {
-               let objTitle = uniqueCatogorys[j];
-               category2[j].push(<SwiperSlide key={pathData[i][0]}><img src={pathData[i][1]}  alt={pathData[i][2]}/></SwiperSlide>)
+               let objTitle = pathData[i][3];
+               category2.objTitle.push(<SwiperSlide key={pathData[i][0]}><img src={pathData[i][1]}  alt={pathData[i][2]}/></SwiperSlide>)
                
            }
            else return
