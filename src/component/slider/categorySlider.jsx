@@ -24,30 +24,33 @@ import SwiperCore, { Pagination } from "swiper";
 SwiperCore.use([Pagination]);
 
 const pathData = artData.map(obj => {return [obj.id, obj.imagePath, obj.title, obj.category]})
-const categoryData = artData.map(obj => {return obj.category});
-const uniqueCatogorys = [... new Set(categoryData)];
-console.log(uniqueCatogorys)
-const category2 = [];
 
 
+function shuffleArray(array) {
+    let currentIndex = array.length, randomIndex;
 
+    while (currentIndex != 0 ) {
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
 
-function createCategory (uniqueCatogorys, category2) {
-    for (let i = 0; i < uniqueCatogorys.length; i++) {
-        category2[uniqueCatogorys[i]] = [];
-        
+      [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
+
     }
-    return category2;
-} 
+    return array
+}
+
+
+
 
 
 function groupBy(ar, prop) {
     let cat = {};
-    for (let i=0; i < xs.length; i++) {
-        let p = xs[i][prop];
+    for (let i=0; i < ar.length; i++) {
+        let p = ar[i][prop];
         if (!cat[p]) { cat[p] = []; }
-        cat[p].push(xs[i]);
+        cat[p].push(ar[i]);
     }
+    return cat;
 }
 
 function addToCategory (pathData, category2, uniqueCatogorys) {
@@ -64,10 +67,23 @@ function addToCategory (pathData, category2, uniqueCatogorys) {
     }
 }
 
-createCategory(uniqueCatogorys, category2);
-console.log(category2)
+function createSlider (ar) {
+    let slides = [];
+    for (let i = 0; i < ar.length; i ++) {
+        for (let j = 0; j < ar[i].length; j ++) {
+
+        }
+    }
+
+}
+
+
+
 console.log("this")
-addToCategory(pathData, category2, uniqueCatogorys);
+//addToCategory(pathData, category2, uniqueCatogorys);
+const catObj = groupBy(artData, "category");
+console.log(catObj)
+
 
 
 
@@ -78,7 +94,7 @@ export default function App() {
     return (
         <div>
             <Swiper id="categorySlider" className="swiper" preloadImages={true} loop={true} draggable={true}>
-                {category[0]}
+                catObj
             </Swiper>
         </div>
 
