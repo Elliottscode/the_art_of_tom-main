@@ -81,6 +81,7 @@ function createSlider (ar) {
 
 console.log("this")
 //addToCategory(pathData, category2, uniqueCatogorys);
+const random = shuffleArray(artData);
 const catObj = groupBy(artData, "category");
 console.log(catObj)
 
