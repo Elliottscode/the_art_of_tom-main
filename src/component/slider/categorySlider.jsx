@@ -67,10 +67,10 @@ function addToCategory (pathData, category2, uniqueCatogorys) {
     }
 }
 
-function createSlider (ar) {
+function createSlider (arRand, arrCat) {
     let slides = [];
-    for (let i = 0; i < ar.length; i ++) {
-        for (let j = 0; j < ar[i].length; j ++) {
+    for (let i = 0; i < arRand.length; i ++) {
+        for (let j = 0; j < arrCat[i].length; j ++) {
 
         }
     }
