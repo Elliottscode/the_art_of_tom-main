@@ -70,6 +70,7 @@ function addToCategory (pathData, category2, uniqueCatogorys) {
 function createSlider (arRand, arrCat) {
     let slides = [];
     for (let i = 0; i < arRand.length; i ++) {
+        slides.push(<Swiper>, </Swiper>)
         for (let j = 0; j < arrCat[i].length; j ++) {
 
         }

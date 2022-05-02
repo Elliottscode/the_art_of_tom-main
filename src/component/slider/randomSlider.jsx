@@ -40,7 +40,7 @@ for (let i = 0; i < [pathData.length]; i++ ) {
         randomPath.push(<SwiperSlide key={pathData[i][0]}><img src={pathData[i][1]}  alt={pathData[i][2]}/></SwiperSlide>)
     }
     
-
+console.log(randomPath)
 
 
 export default function App() {
