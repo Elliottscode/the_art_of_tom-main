@@ -68,12 +68,25 @@ function addToCategory (pathData, category2, uniqueCatogorys) {
 }
 
 function createSlider (arRand, arrCat) {
-    let slides = [];
+    let slideCategory = [];
     for (let i = 0; i < arRand.length; i ++) {
-        slides.push(<Swiper>, </Swiper>)
-        for (let j = 0; j < arrCat[i].length; j ++) {
 
+        let slides = [];
+        slides.push(<SwiperSlide key={arRand[i][0]}><img src={arRand[i][1]} alt={arRand[i][2]} /></SwiperSlide>)
+
+        for (let j = 0; j < arrCat.length; j ++) {
+            if (arRand[i].category === arrCat[j][0].category ) {
+
+                for (let k = 0; k < arrCat[j].length; k ++ ) {
+
+                    if (arRand[i].id !== arrCat[j][k].id) {
+                        slides.push(<SwiperSlide key={arrCat[j][k][0]}><img src={arrCat[j][k][1]} alt={arrCat[j][k][2]} /></SwiperSlide>)
+                    }
+                }
+
+            }
         }
+        slideCategory.push(<Swiper loop={true}>{slides}</Swiper>)
     }
 
 }
