@@ -72,7 +72,7 @@ function createSlider (arRand, arrCat) {
     for (let i = 0; i < arRand.length; i ++) {
 
         let slides = [];
-        slides.push(<SwiperSlide key={arRand[i][0]}><img src={arRand[i][1]} alt={arRand[i][2]} /></SwiperSlide>)
+        slides.push(<SwiperSlide key={"random" + arRand[i][0]}><img src={arRand[i][1]} alt={arRand[i][2]} /></SwiperSlide>)
 
         for (let j = 0; j < arrCat.length; j ++) {
             if (arRand[i].category === arrCat[j][0].category ) {
@@ -80,14 +80,15 @@ function createSlider (arRand, arrCat) {
                 for (let k = 0; k < arrCat[j].length; k ++ ) {
 
                     if (arRand[i].id !== arrCat[j][k].id) {
-                        slides.push(<SwiperSlide key={arrCat[j][k][0]}><img src={arrCat[j][k][1]} alt={arrCat[j][k][2]} /></SwiperSlide>)
+                        slides.push(<SwiperSlide key={"category" + arrCat[j][k][0]}><img src={arrCat[j][k][1]} alt={arrCat[j][k][2]} /></SwiperSlide>)
                     }
                 }
 
             }
         }
-        slideCategory.push(<Swiper loop={true}>{slides}</Swiper>)
+        slideCategory.push(<Swiper key={"categorySlider" + i} id={"categorySwiper" + i} className="swiper" loop={true} direction={"vertical"} draggable={true}  >{slides}</Swiper>)
     }
+    return (slideCategory)
 
 }
 
@@ -97,7 +98,8 @@ console.log("this")
 //addToCategory(pathData, category2, uniqueCatogorys);
 const random = shuffleArray(artData);
 const catObj = groupBy(artData, "category");
-console.log(catObj)
+const sli = createSlider(random, catObj);
+console.log(sli)
 
 
 
@@ -109,7 +111,7 @@ export default function App() {
     return (
         <div>
             <Swiper id="categorySlider" className="swiper" preloadImages={true} loop={true} draggable={true}>
-                catObj
+                {sli}
             </Swiper>
         </div>
 
