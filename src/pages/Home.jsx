@@ -4,7 +4,7 @@ import "./Home.scss"
 import Imgslider from "../component/slider/ImageSlider.jsx"
 import { Button } from "bootstrap";
 import { useEffect } from "react";
-import RandomSlider from "../component/slider/randomSlider.jsx"
+// import RandomSlider from "../component/slider/randomSlider.jsx"
 import CategorySlider from "../component/slider/categorySlider.jsx"
 const Home = () => {
 
@@ -13,7 +13,7 @@ const Home = () => {
       
      // <div>
         <div className="home">
-            <RandomSlider></RandomSlider>
+            {/* <RandomSlider></RandomSlider> */}
             <CategorySlider></CategorySlider>
             {/* <RandomSlider></RandomSlider> */}
             {/* <Imgslider></Imgslider>   */}

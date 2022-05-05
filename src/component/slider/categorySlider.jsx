@@ -71,8 +71,9 @@ function createSlider (arRand, arrCat) {
     let slideCategory = [];
     for (let i = 0; i < arRand.length; i ++) {
 
+        // object[i] =   
         let slides = [];
-        slides.push(<SwiperSlide key={"random" + arRand[i][0]}><img src={arRand[i][1]} alt={arRand[i][2]} /></SwiperSlide>)
+        slides.push(<SwiperSlide key={"random" + i}><img src={arRand[i][1]} alt={arRand[i][2]} /></SwiperSlide>)
 
         for (let j = 0; j < arrCat.length; j ++) {
             if (arRand[i].category === arrCat[j][0].category ) {
@@ -80,13 +81,13 @@ function createSlider (arRand, arrCat) {
                 for (let k = 0; k < arrCat[j].length; k ++ ) {
 
                     if (arRand[i].id !== arrCat[j][k].id) {
-                        slides.push(<SwiperSlide key={"category" + arrCat[j][k][0]}><img src={arrCat[j][k][1]} alt={arrCat[j][k][2]} /></SwiperSlide>)
+                        slides.push(<SwiperSlide key={"category" + k}><img src={arrCat[j][k][1]} alt={arrCat[j][k][2]} /></SwiperSlide>)
                     }
                 }
 
             }
         }
-        slideCategory.push(<Swiper key={"categorySlider" + i} id={"categorySwiper" + i} className="swiper" loop={true} direction={"vertical"} draggable={true}  >{slides}</Swiper>)
+        slideCategory.push(<Swiper key={"categorySlider" + i} className="swiper" loop={true} direction={"vertical"} draggable={true}  >{slides.map(function (item) {return item;})}</Swiper>)
     }
     return (slideCategory)
 
