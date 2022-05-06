@@ -95,7 +95,9 @@ function createSlider (arRand, arrCat) {
 
 }
 
-
+function formatArray() {
+    
+}
 
 console.log("this")
 //addToCategory(pathData, category2, uniqueCatogorys);
