@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import "./Home.scss"
-import Imgslider from "../component/slider/ImageSlider.jsx"
+// import Imgslider from "../component/slider/ImageSlider.jsx"
 import { Button } from "bootstrap";
 import { useEffect } from "react";
 // import RandomSlider from "../component/slider/randomSlider.jsx"
@@ -16,7 +16,7 @@ const Home = () => {
             {/* <RandomSlider></RandomSlider> */}
             <CategorySlider></CategorySlider>
             {/* <RandomSlider></RandomSlider> */}
-            {/* <Imgslider></Imgslider>   */}
+       
           
        
         

@@ -72,7 +72,7 @@ function createSlider (arRand, arrCat) {
     for (let i = 0; i < arRand.length; i ++) {
 
         // object[i] =  <swiper> or slides[i] = swiper 
-        let slides = {};
+        let slides = [];
         slides.push(<SwiperSlide key={"random" + i}><img src={arRand[i][1]} alt={arRand[i][2]} /></SwiperSlide>)
 
         for (let j = 0; j < arrCat.length; j ++) {
@@ -89,7 +89,7 @@ function createSlider (arRand, arrCat) {
         }
         
 
-        slideCategory.push(<Swiper key={"categorySlider" + i} className="swiper" loop={true} direction={"vertical"} draggable={true}  >{slides.map(function (item) {return item;})}</Swiper>)
+        slideCategory.push(<Swiper key={"categorySlider" + i} className="swiper" loop={true} direction={"vertical"} draggable={true}  >{slides}</Swiper>)
     }
     return (slideCategory)
 
@@ -105,6 +105,7 @@ const random = shuffleArray(artData);
 const catObj = groupBy(artData, "category");
 const sli = createSlider(random, catObj);
 console.log(sli)
+let slide1 = sli[1];
 
 
 
@@ -116,7 +117,11 @@ export default function App() {
     return (
         <div>
             <Swiper id="categorySlider" className="swiper" preloadImages={true} loop={true} draggable={true}>
-                {sli}
+                <Swiper className="swiper" loop={true} direction={"vertical"} draggable={true}  >
+                    <SwiperSlide>Hi 1</SwiperSlide>
+                    <SwiperSlide>Hi 2</SwiperSlide>
+            
+                </Swiper>
             </Swiper>
         </div>
 
