@@ -29,20 +29,42 @@ import artData from '../../assets/art/imageindex.js'
 
 export default function App() {
 
-  const originalPath = artData.map(obj => {return obj.imagePath});
-  const originalOrder = artData.map(obj => {return obj.id});
+
+  const pathData = artData.map(obj => {return [obj.id, obj.imagePath, obj.title, obj.category]})
+
 
   const slide = [];
 
-  originalPath.forEach((item, index)=>{ 
-    slide.push(<SwiperSlide key={originalOrder[index]}> <img src={originalPath[index]} /></SwiperSlide>)
-  })
+  function shuffleArray(array) {
+    let currentIndex = array.length, randomIndex;
+
+    while (currentIndex != 0 ) {
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+
+      [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
+
+    }
+    return array
+}
+
   
   return (
     <div>
     <>
     <Swiper className="mySwiper" preloadImages={true} loop={true} >
-      {slide}
+      <SwiperSlide>
+
+      </SwiperSlide>
+
+      <SwiperSlide>
+
+      </SwiperSlide>
+
+      <SwiperSlide>
+
+        
+      </SwiperSlide>
     </Swiper>
     </>
   
