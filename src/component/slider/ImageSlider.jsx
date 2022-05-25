@@ -33,7 +33,6 @@ export default function App() {
   const pathData = artData.map(obj => {return [obj.id, obj.imagePath, obj.title, obj.category]})
 
 
-  const slide = [];
 
   function shuffleArray(array) {
     let currentIndex = array.length, randomIndex;
