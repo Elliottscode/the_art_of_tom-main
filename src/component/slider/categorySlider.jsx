@@ -89,7 +89,7 @@ function createSlider (arRand, arrCat) {
         }
         
 
-        slideCategory.push(<SwiperSlide key={"categorySlidermain" + i}><Swiper key={"categorySlider" + i} className="swiper" loop={true} direction={"vertical"} draggable={true}  >{slides}</Swiper></SwiperSlide>)
+        slideCategory.push(<SwiperSlide key={"categorySlidermain" + i}><Swiper key={"categorySlider" + i} className="swiper" loop={true} direction={"vertical"} draggable={true} nested={true}  >{slides}</Swiper></SwiperSlide>)
     }
     return (slideCategory)
 
@@ -113,7 +113,7 @@ export default function App() {
 
     return (
         <div>
-            <Swiper id="categorySlider" className="swiper" preloadImages={true} loop={true} draggable={true}>
+            <Swiper id="categorySlider" className="swiper" preloadImages={true} loop={true} draggable={true} nested={true}>
                 {sli}
             </Swiper>
         </div>
