@@ -53,16 +53,15 @@ export default function App() {
     <>
     <Swiper className="mySwiper" preloadImages={true} loop={true} >
       <SwiperSlide>
-
+        slide 1
       </SwiperSlide>
-
+      <Swiper className="nestedSwiper" preloadImages={true} loop={true} nested={true}>
       <SwiperSlide>
-
+        nested 
       </SwiperSlide>
-
+      </Swiper>
       <SwiperSlide>
-
-        
+        slide 3 
       </SwiperSlide>
     </Swiper>
     </>
