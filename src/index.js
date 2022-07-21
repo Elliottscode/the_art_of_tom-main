@@ -27,4 +27,4 @@ const app = ({ hideLoader }) => {
 const appElement = document.getElementById('app');
 
 setTimeout(() => 
-ReactDOM.render(<App hideLoader={hideLoader} showLoader={showLoader} />, appElement), 1000);
+ReactDOM.render(<App hideLoader={hideLoader} showLoader={showLoader} />, appElement), 10000);

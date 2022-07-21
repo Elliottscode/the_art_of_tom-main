@@ -1,7 +1,7 @@
 {
-  "name": "react_template_webpack_babel",
+  "name": "The Art Of Tom",
   "version": "1.0.0",
-  "description": "",
+  "description": "A collection of art",
   "main": "index.js",
   "scripts": {
     "dev": "webpack --mode=development --devtool=false",
