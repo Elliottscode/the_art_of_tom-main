@@ -17,7 +17,7 @@ const app = ({ hideLoader }) => {
     useEffect(hideLoader, []);
 
     return (
-        <div id="loadingPage">Im the app</div>
+        <div>Im the app</div>
     );
 }
 
@@ -26,5 +26,4 @@ const app = ({ hideLoader }) => {
 
 const appElement = document.getElementById('app');
 
-setTimeout(() => 
-ReactDOM.render(<App hideLoader={hideLoader} showLoader={showLoader} />, appElement), 10000);
+setTimeout(() => ReactDOM.render(<App hideLoader={hideLoader} showLoader={showLoader} />, appElement), 10000);

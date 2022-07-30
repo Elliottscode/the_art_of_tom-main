@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "webpack --mode=development --devtool=false",
     "start": "webpack-dev-server --config ./webpack.config.js",
-    "build": "webpack --mode=production"
+    "build": "webpack --config webpack.prod.js"
   },
   "keywords": [],
   "author": "",
@@ -37,6 +37,7 @@
     "style-loader": "^3.3.1",
     "webpack": "^5.64.2",
     "webpack-cli": "^4.9.1",
-    "webpack-dev-server": "^4.5.0"
+    "webpack-dev-server": "^4.5.0",
+    "webpack-merge": "^5.8.0"
   }
 }
