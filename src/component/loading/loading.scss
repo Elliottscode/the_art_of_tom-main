@@ -1,0 +1,18 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#loadingImage {
+    align-self: center;
+    height: max-content;
+}
+
+@media (max-width: 1300px) {
+   
+    #loadingImage {
+        width: max-content;
+        height: auto;
+    }
+    
+  }
