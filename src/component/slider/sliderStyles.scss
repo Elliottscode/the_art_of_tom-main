@@ -51,6 +51,10 @@ body {
 
 
 @media (max-width: 1300px) {
+  body{
+    margin: 0;
+    padding: 0;
+  }
   .swiper {
     width: 100%;
     height: 40em;
@@ -99,18 +103,20 @@ body {
   z-index: 10;
   margin-left: 4%;
   margin-top:2%;
-  width: 10%; // fit-content 
+  padding-left: 1%;
+  padding-right: 1%;
+  width: fit-content; // fit-content 
   height: 5%;
 
   // box styleing 
   color: rgb(0, 0, 0);
   font-size: large;
-  background-color: rgba(224, 61, 61, 0.664);
-  border: 4px solid rgb(255, 0, 0);
+  background-color: rgba(238, 238, 238, 0.664);
+  border: 4px solid rgb(119, 119, 119);
   border-radius: 8px;
 
   #titleText {
-    color: #eee;
+    color: rgb(0, 0, 0);
     position: relative;
     width: auto;
     height: auto;
