@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 // Import swiper styles 
 import "swiper/scss";
 import "swiper/scss/pagination"
+import "swiper/scss/navigation"
 
 // my added styles 
 import "./sliderStyles.scss"
@@ -12,11 +13,11 @@ import "./sliderStyles.scss"
 import artData from "../../assets/art/imageindex";
 
 import SwiperCore, {
-    Pagination, EffectCube
+    Pagination, navigation, Navigation
 } from 'swiper';
 
 
-SwiperCore.use([Pagination]);
+SwiperCore.use([Pagination, Navigation]);
 
 // only ran once 
 const pathData = artData.map(obj => {return [obj.id, obj.imagePath, obj.title, obj.category ]});
@@ -84,7 +85,7 @@ export default function App() {
         <div>
         <>
         {showElement ? (<div className="titleBox"><div id="titleText" >{artTitle}</div></div>) : (<div></div>)}{" "}
-        <Swiper id="randomSwiper" className="swiper" preloadImages={true} loop={true} draggable={true} preventInteractionOnTransition={true} onTransitionEnd={titleDisapear()} onSlideChange={index => setTitle(titleUpdate(index.realIndex))} >
+        <Swiper id="randomSwiper" className="swiper" navigation={true} preloadImages={true} loop={true} draggable={true} preventInteractionOnTransition={true} onTransitionEnd={titleDisapear()} onSlideChange={index => setTitle(titleUpdate(index.realIndex))} >
             {randomPath}
         </Swiper>
         
