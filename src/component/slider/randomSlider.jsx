@@ -77,7 +77,7 @@ export default function App() {
         titleDisapear()
     }, []);
     
-    
+    // for debugging title box print statment in on transition end 
     
 
 
