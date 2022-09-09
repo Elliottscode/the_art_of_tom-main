@@ -6,6 +6,7 @@ import { Button } from "bootstrap";
 import { useEffect } from "react";
 import RandomSlider from "../component/slider/randomSlider.jsx"
 import CategorySlider from "../component/slider/categorySlider.jsx"
+import Test from "../component/slider/testCategory.jsx"
 
 
 
@@ -16,9 +17,10 @@ const Home = () => {
       
      // <div>
         <div className="home">
-            <RandomSlider></RandomSlider>
+            {/* <RandomSlider></RandomSlider> */}
             {/* <CategorySlider></CategorySlider> */}
             {/* <RandomSlider></RandomSlider> */}
+            <Test></Test>
        
           
        
