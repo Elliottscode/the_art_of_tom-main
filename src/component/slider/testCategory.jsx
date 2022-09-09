@@ -25,6 +25,23 @@ import SwiperCore, {
 SwiperCore.use([Pagination, Navigation]);
 
 
+function shuffleArray(array) {
+    let currentIndex = array.length, randomIndex;
+
+    while (currentIndex != 0 ) {
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+
+      [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
+
+    }
+    return array
+}
+
+const pathData = artData.map(obj => {return [obj.id, obj.imagePath, obj.title, obj.category]})
+const random = shuffleArray(artData);
+
+
 export default function App() {
     return (
         <>
@@ -37,6 +54,7 @@ export default function App() {
             <SwiperSlide id="h1">
                 Slide 1 
             </SwiperSlide>
+
             <SwiperSlide>
             <Swiper
             className="mySwiper2 swiper-v"
@@ -55,6 +73,7 @@ export default function App() {
 
             </Swiper>
             </SwiperSlide>
+
             <SwiperSlide>
             <Swiper
             className="mySwiper3 swiper-v"

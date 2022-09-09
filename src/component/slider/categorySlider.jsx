@@ -98,8 +98,12 @@ function createSlider (arRand, arrCat) {
 
 console.log("this")
 //addToCategory(pathData, category2, uniqueCatogorys);
-const random = shuffleArray(artData);
-const catObj = groupBy(artData, "category");
+const random = shuffleArray(pathData);
+console.log("this is random")
+console.log(random)
+const catObj = groupBy(pathData, "category");
+console.log("this is groupby")
+console.log(catObj)
 const sli = createSlider(random, catObj);
 console.log(sli)
 let slide1 = sli[1];
@@ -113,9 +117,11 @@ export default function App() {
 
     return (
         <div>
+            <>
             <Swiper id="categorySlider" className="swiper" preloadImages={true} loop={true} draggable={true} nested={true}>
                 {sli}
             </Swiper>
+            </>
         </div>
 
     )
