@@ -45,7 +45,8 @@ export default function App() {
             pagination={{
               clickable: true,
             }}
-            modules={[Pagination]}>
+            modules={[Pagination]}
+            loop={true}>
                 <SwiperSlide key="v11">vertical 1</SwiperSlide>
                 <SwiperSlide key="v12">vertical 2</SwiperSlide>
                 <SwiperSlide key="v13">vertical 3</SwiperSlide>
@@ -62,7 +63,8 @@ export default function App() {
             pagination={{
               clickable: true,
             }}
-            modules={[Pagination]}>
+            modules={[Pagination]}
+            loop={true}>
                 <SwiperSlide key="v21">other vertical 1</SwiperSlide>
                 <SwiperSlide key="v22">other vertical 2</SwiperSlide>
                 <SwiperSlide key="v23">other vertical 3</SwiperSlide>
@@ -79,7 +81,8 @@ export default function App() {
             pagination={{
               clickable: true,
             }}
-            modules={[Pagination]}>
+            modules={[Pagination]}
+            loop={true}>
                 <SwiperSlide key="v31">other other vertical 1</SwiperSlide>
                 <SwiperSlide key="v32">other other vertical 2</SwiperSlide>
                 <SwiperSlide key="v33">other other vertical 3</SwiperSlide>
