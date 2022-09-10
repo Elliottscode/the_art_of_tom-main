@@ -69,26 +69,31 @@ function addToCategory (pathData, category2, uniqueCatogorys) {
 
 function createSlider (arRand, arrCat) {
     let slideCategory = [];
+    console.log(Object.values(arrCat)[0][3].category)
+    console.log(Object.values(arrCat)[0][3].imagePath)
+    let catLegnth = Object.keys(arrCat).length;
     for (let i = 0; i < arRand.length; i ++) {
 
         // object[i] =  <swiper> or slides[i] = swiper 
         let slides = [];
         slides.push(<SwiperSlide key={"random" + i}><img src={arRand[i][1]} alt={arRand[i][2]} /></SwiperSlide>)
 
-        for (let j = 0; j < arrCat.length; j ++) {
-            if (arRand[i].category === arrCat[j][0].category ) {
+        for (let j = 0; j < catLegnth; j ++) {
+            console.log("hi")
+            if (arRand[i][3] === Object.values(arrCat)[j][0].category) {
+                console.log("working here")
+                for (let k = 0; k < Object.values(arrCat)[j].length; k ++ ) {
 
-                for (let k = 0; k < arrCat[j].length; k ++ ) {
-
-                    if (arRand[i].id !== arrCat[j][k].id) {
-                        slides.push(<SwiperSlide key={"category" + k}><img src={arrCat[j][k][1]} alt={arrCat[j][k][2]} /></SwiperSlide>)
+                    if (arRand[i].id !== Object.values(arrCat)[j][k].id) {
+                        slides.push(<SwiperSlide key={"category" + k}><img src={Object.values(arrCat)[j][k].imagePath} alt={arrCat[j][k][2]} /></SwiperSlide>)
+                        
                     }
                 }
 
             }
         }
         
-
+        //console.log(slides)
         slideCategory.push(<SwiperSlide key={"categorySlidermain" + i}><Swiper key={"categorySlider" + i} className="swiper" loop={true} direction={"vertical"} draggable={true} nested={true}  >{slides}</Swiper></SwiperSlide>)
     }
     return (slideCategory)
@@ -101,12 +106,12 @@ console.log("this")
 const random = shuffleArray(pathData);
 console.log("this is random")
 console.log(random)
-const catObj = groupBy(pathData, "category");
+const catObj = groupBy(artData, "category");
 console.log("this is groupby")
 console.log(catObj)
-const sli = createSlider(random, catObj);
+let sli = createSlider(random, catObj);
 console.log(sli)
-let slide1 = sli[1];
+
 
 
 

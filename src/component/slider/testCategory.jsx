@@ -41,6 +41,15 @@ function shuffleArray(array) {
 const pathData = artData.map(obj => {return [obj.id, obj.imagePath, obj.title, obj.category]})
 const random = shuffleArray(artData);
 
+function groupBy(ar, prop) {
+    let cat = [];
+    for (let i=0; i < ar.length; i++) {
+        let p = ar[i][prop];
+        if (!cat[p]) { cat[p] = []; }
+        cat[p].push(ar[i]);
+    }
+    return cat;
+}
 
 export default function App() {
     return (
