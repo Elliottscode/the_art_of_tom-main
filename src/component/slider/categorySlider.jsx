@@ -79,10 +79,10 @@ function createSlider (arRand, arrCat) {
         slides.push(<SwiperSlide key={"random" + i}><img src={arRand[i][1]} alt={arRand[i][2]} /></SwiperSlide>)
 
         for (let j = 0; j < catLegnth; j ++) {
-            console.log("hi")
+            //console.log("hi")
             let lengthofgroup = Object.values(arrCat)[j];
             if (arRand[i][3] === Object.values(arrCat)[j][0].category) {
-                console.log("working here")
+                //console.log("working here")
                 for (let k = 0; k < lengthofgroup.length; k ++ ) {
                     let srcs = Object.values(arrCat)[j][k].imagePath;
                     let alts = Object.values(arrCat)[j][k].title;
@@ -102,6 +102,8 @@ function createSlider (arRand, arrCat) {
     return (slideCategory)
 
 }
+let index = Swiper.realIndex;
+console.log(index)
 
 
 console.log("this")
