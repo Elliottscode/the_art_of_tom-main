@@ -17,8 +17,8 @@ const Home = () => {
       
      // <div>
         <div className="home">
-            {/* <RandomSlider></RandomSlider> */}
-            <CategorySlider></CategorySlider>
+            <RandomSlider></RandomSlider>
+            {/* <CategorySlider></CategorySlider> */}
             {/* <RandomSlider></RandomSlider> */}
             {/* <Test></Test> */}
        
