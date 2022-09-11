@@ -84,9 +84,11 @@ function createSlider (arRand, arrCat) {
             if (arRand[i][3] === Object.values(arrCat)[j][0].category) {
                 console.log("working here")
                 for (let k = 0; k < lengthofgroup.length; k ++ ) {
-
+                    let srcs = Object.values(arrCat)[j][k].imagePath;
+                    let alts = Object.values(arrCat)[j][k].title;
+                    let cateogory = Object.values(arrCat)[j][k].category;
                     if (arRand[i].id !== Object.values(arrCat)[j][k].id) {
-                        slides.push(<SwiperSlide key={"category" + k}><img src={Object.values(arrCat)[j][k].imagePath} alt={arrCat[j][k][2]} /></SwiperSlide>)
+                        slides.push(<SwiperSlide key={"category" + k}><img src={srcs} alt={alts + ", " + cateogory} /></SwiperSlide>)
                         
                     }
                 }
