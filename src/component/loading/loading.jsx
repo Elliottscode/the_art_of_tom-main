@@ -1,6 +1,6 @@
 import React from "react";
 import "./loading.scss";
-import loadpic from "../../../public/LoadingScreen.webp"
+import loadpic from "../../../public/LogoArt.webp"
 
 
 export default function LoadingScreen() {

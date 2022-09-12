@@ -3,6 +3,11 @@ body {
     padding: 0;
 }
 
+.loading-container{
+    margin: 0;
+    padding: 0;
+}
+
 #loadingImage {
     justify-content: center;
     height: 100vh;
@@ -15,7 +20,7 @@ body {
 @media (max-width: 1300px) {
    
     #loadingImage {
-        width: max-content;
+        width: 100vw;
         height: auto;
     }
     

@@ -23,6 +23,7 @@ import SwiperCore, { Pagination } from "swiper";
 
 SwiperCore.use([Pagination]);
 
+let slideTitle = "";
 const pathData = artData.map(obj => {return [obj.id, obj.imagePath, obj.title, obj.category]})
 
 
@@ -38,6 +39,7 @@ function shuffleArray(array) {
     }
     return array
 }
+
 
 
 
@@ -97,13 +99,11 @@ function createSlider (arRand, arrCat) {
         }
         
         //console.log(slides)
-        slideCategory.push(<SwiperSlide key={"categorySlidermain" + i}><Swiper key={"categorySlider" + i} className="swiper" loop={true} direction={"vertical"} draggable={true} nested={true}  >{slides}</Swiper></SwiperSlide>)
+        slideCategory.push(<SwiperSlide key={"categorySlidermain" + i}><Swiper key={"categorySlider" + i} className="swiper" loop={true} direction={"vertical"} draggable={true} nested={true} preloadImages={true} >{slides}</Swiper></SwiperSlide>)
     }
     return (slideCategory)
 
 }
-let index = Swiper.realIndex;
-console.log(index)
 
 
 console.log("this")
@@ -123,12 +123,44 @@ console.log(sli)
 
 export default function App() {
 
+    function titleUpdate(index) {
+        console.log(index)
+        setShowElement(true)
+        console.log(typeof titleTimer)
+        if (typeof titleTimer !== 'undefined') {
+            // the variable is defined
+            console.log("whoo")
+            clearTimeout(titleTimer);
+        }
+        slideTitle = pathData[index][2]; 
+        return slideTitle;
+    }
+    // changes title for slide change  
+    let [artTitle, setTitle] = useState(0);
+
+    // hides the title after x seconds 
+    const [showElement, setShowElement] = useState(true);
+    let titleTimer;
+    function titleDisapear() {   
+        titleTimer = setTimeout(function () {
+            setShowElement(false);
+            console.log("here");
+        }, 10000);
+    }
+    
+    useEffect(() => {
+        titleDisapear()
+    }, []);
+    
+    // for debugging title box print statment in on transition end 
+
 
 
     return (
         <div>
             <>
-            <Swiper id="categorySlider" className="swiper" preloadImages={true} loop={true} draggable={true} nested={true}>
+            {showElement ? (<div className="titleBox"><div id="titleText" >{artTitle}</div></div>) : (<div></div>)}{" "}
+            <Swiper id="categorySlider" className="swiper" preloadImages={true} loop={true} draggable={true} nested={true} onTransitionEnd={titleDisapear()} onSlideChange={index => setTitle(titleUpdate(index.realIndex))}>
                 {sli}
             </Swiper>
             </>
