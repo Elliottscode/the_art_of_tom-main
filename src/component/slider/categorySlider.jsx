@@ -41,10 +41,6 @@ function shuffleArray(array) {
 }
 
 
-
-
-
-
 function groupBy(ar, prop) {
     let cat = {};
     for (let i=0; i < ar.length; i++) {
@@ -55,19 +51,6 @@ function groupBy(ar, prop) {
     return cat;
 }
 
-function addToCategory (pathData, category2, uniqueCatogorys) {
-    for (let i = 0; i < pathData.length; i ++) {
-       for (let j = 0; j < uniqueCatogorys.length; j ++) {
-           console.log(pathData[i][3])
-           if (pathData[i][3] === uniqueCatogorys[j] ) {
-               let objTitle = pathData[i][3];
-               category2.objTitle.push(<SwiperSlide key={pathData[i][0]}><img src={pathData[i][1]}  alt={pathData[i][2]}/></SwiperSlide>)
-               
-           }
-           else return
-       }
-    }
-}
 
 function createSlider (arRand, arrCat) {
     let slideCategory = [];
