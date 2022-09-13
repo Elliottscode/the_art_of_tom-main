@@ -14,18 +14,16 @@ const Home = () => {
   
     return (
       
-     // <div>
         <div className="home">
             {/* <RandomSlider></RandomSlider> */}
             <CategorySlider></CategorySlider>
-            {/* <RandomSlider></RandomSlider> */}
+            
        
           
        
         
 
         </div>
-     // </div>
   
     );
   
