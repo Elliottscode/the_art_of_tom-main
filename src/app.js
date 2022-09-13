@@ -25,7 +25,7 @@ import LoadingScreen from "./component/loading/loading.jsx";
 export function App () {
     const [loading, setLoading] = useState(true)
 
-    useEffect(() => {setTimeout(() => setLoading(false), 6000)}, [])
+    useEffect(() => {setTimeout(() => setLoading(false), 3000)}, [])
 
 
   return (
