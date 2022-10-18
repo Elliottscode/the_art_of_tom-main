@@ -128,11 +128,11 @@ export default function App() {
         titleTimer = setTimeout(function () {
             setShowElement(false);
             console.log("here");
-        }, 10000);
+        }, 1000000);
     }
     
     useEffect(() => {
-        titleDisapear()
+        //titleDisapear()
     }, []);
     
     // for debugging title box print statment in on transition end 
