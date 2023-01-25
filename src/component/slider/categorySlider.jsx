@@ -27,6 +27,10 @@ let slideTitle = "";
 const pathData = artData.map(obj => {return [obj.id, obj.imagePath, obj.title, obj.category]})
 
 
+
+
+
+
 function shuffleArray(array) {
     let currentIndex = array.length, randomIndex;
 
@@ -92,10 +96,8 @@ function createSlider (arRand, arrCat) {
 console.log("this")
 //addToCategory(pathData, category2, uniqueCatogorys);
 const random = shuffleArray(pathData);
-console.log("this is random")
-console.log(random)
 const catObj = groupBy(artData, "category");
-console.log("this is groupby")
+console.log("category")
 console.log(catObj)
 let sli = createSlider(random, catObj);
 console.log(sli)
@@ -109,10 +111,8 @@ export default function App() {
     function titleUpdate(index) {
         console.log(index)
         setShowElement(true)
-        console.log(typeof titleTimer)
         if (typeof titleTimer !== 'undefined') {
             // the variable is defined
-            console.log("whoo")
             clearTimeout(titleTimer);
         }
         slideTitle = pathData[index][2]; 
@@ -127,8 +127,7 @@ export default function App() {
     function titleDisapear() {   
         titleTimer = setTimeout(function () {
             setShowElement(false);
-            console.log("here");
-        }, 1000000);
+        }, 10000);
     }
     
     useEffect(() => {
