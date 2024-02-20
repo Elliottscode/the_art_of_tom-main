@@ -1,24 +1,18 @@
-import React from "react";
+/* eslint-disable no-unused-vars */
+import React from 'react'
 
-import ArtTitles from "../component/Title.jsx";
-
-
+import ArtTitles from '../component/Title.jsx'
 
 const Collection = () => {
+  return (
+    <div>
+      <h1>Collection</h1>
 
-    return (
-      <div>
-        <h1>Collection</h1>
-        
       <ArtTitles></ArtTitles>
-      
 
-      </div>
-     
+    </div>
 
-    );
-  
-};
-  
+  )
+}
 
-export default Collection;
+export default Collection

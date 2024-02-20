@@ -1,33 +1,18 @@
-import React from "react";
-import imageTitle from "../assets/art/imageindex"
-import { Link } from "react-router-dom";
+// eslint-disable-next-line no-unused-vars
+import React from 'react'
+import imageTitle from '../assets/art/imageindex'
 
+// get list of titles and names from imageIndex
 
-// get list of titles and names from imageIndex 
-const artTitles = imageTitle.map(img => img.title);
-const imgAddress = imageTitle.map(imgt => imgt.imagePath);
-      
-
-
-// component for displaying image data 
+// component for displaying image data
 const Title = () => {
+  return (
+    <div className= "Titles">
 
+      {imageTitle.map(img => <a href={img.imagePath} target="_blank" className="titlea"><div className="title">{img.title}</div></a>)}
 
-
-    return (
-        <div className= "Titles">
-            
-                {imageTitle.map(img => <a href={img.imagePath} target="_blank" className="titlea"><div className="title">{img.title}</div></a>)}
-            
-            
-        </div>
-    );
-
-
+    </div>
+  )
 }
 
-
-
-
-
-export default Title;
+export default Title
