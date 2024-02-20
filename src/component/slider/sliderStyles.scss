@@ -17,7 +17,7 @@ body {
 
 .swiper {
   width: auto;
-  height: 100vh;
+  height: 100%;
 }
 
 
@@ -43,9 +43,13 @@ body {
 
 .swiper-slide img {
   display: block;
-  width: 99vw;
-  height: auto;
+  width: auto;
+  height: 100%;
   object-fit: cover;
+}
+
+#sliderSize {
+  height: 100%;
 }
 
 

@@ -81,7 +81,7 @@ export default function App() {
 
 
     return (
-        <div>
+        <div id="sliderSize">
         <>
         {showElement ? (<div className="titleBox"><div id="titleText" >{artTitle}</div></div>) : (<div></div>)}{" "}
         <Swiper id="randomSwiper" className="swiper" preloadImages={true} loop={true} draggable={true} preventInteractionOnTransition={true} onTransitionEnd={titleDisapear()} onSlideChange={index => setTitle(titleUpdate(index.realIndex))} >
