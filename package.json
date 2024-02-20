@@ -1,15 +1,17 @@
 {
+
   "name": "The_Art_Of_Tom",
   "version": "1.0.0",
-  "description": "",
+  "description": "A collection of art",
   "homepage": "https://elliottscode.github.io/the_art_of_tom-main/",
   "main": "index.js",
   "scripts": {
     "dev": "webpack --mode=development --devtool=false",
     "start": "webpack-dev-server --config ./webpack.config.js",
-    "build": "webpack --mode=production",
+    "prod": "webpack --mode=production",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "build": "webpack --config webpack.prod.js"
   },
   "keywords": [],
   "author": "",
@@ -17,6 +19,9 @@
   "dependencies": {
     "bootstrap": "^5.1.3",
     "gh-pages": "^4.0.0",
+    "follow-redirects": "^1.15.1",
+    "lodash": "^4.17.21",
+    "minimist": "^1.2.6",
     "react": "^17.0.2",
     "react-bootstrap": "^2.1.1",
     "react-dom": "^17.0.2",
@@ -39,6 +44,7 @@
     "style-loader": "^3.3.1",
     "webpack": "^5.64.2",
     "webpack-cli": "^4.9.1",
-    "webpack-dev-server": "^4.5.0"
+    "webpack-dev-server": "^4.5.0",
+    "webpack-merge": "^5.8.0"
   }
 }

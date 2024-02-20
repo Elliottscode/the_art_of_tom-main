@@ -23,7 +23,12 @@ import SwiperCore, { Pagination } from "swiper";
 
 SwiperCore.use([Pagination]);
 
+let slideTitle = "";
 const pathData = artData.map(obj => {return [obj.id, obj.imagePath, obj.title, obj.category]})
+
+
+
+
 
 
 function shuffleArray(array) {
@@ -40,9 +45,6 @@ function shuffleArray(array) {
 }
 
 
-
-
-
 function groupBy(ar, prop) {
     let cat = {};
     for (let i=0; i < ar.length; i++) {
@@ -53,43 +55,38 @@ function groupBy(ar, prop) {
     return cat;
 }
 
-function addToCategory (pathData, category2, uniqueCatogorys) {
-    for (let i = 0; i < pathData.length; i ++) {
-       for (let j = 0; j < uniqueCatogorys.length; j ++) {
-           console.log(pathData[i][3])
-           if (pathData[i][3] === uniqueCatogorys[j] ) {
-               let objTitle = pathData[i][3];
-               category2.objTitle.push(<SwiperSlide key={pathData[i][0]}><img src={pathData[i][1]}  alt={pathData[i][2]}/></SwiperSlide>)
-               
-           }
-           else return
-       }
-    }
-}
 
 function createSlider (arRand, arrCat) {
     let slideCategory = [];
+    console.log(Object.values(arrCat)[0][3].category)
+    console.log(Object.values(arrCat)[0][3].imagePath)
+    let catLegnth = Object.keys(arrCat).length;
     for (let i = 0; i < arRand.length; i ++) {
 
         // object[i] =  <swiper> or slides[i] = swiper 
         let slides = [];
         slides.push(<SwiperSlide key={"random" + i}><img src={arRand[i][1]} alt={arRand[i][2]} /></SwiperSlide>)
 
-        for (let j = 0; j < arrCat.length; j ++) {
-            if (arRand[i].category === arrCat[j][0].category ) {
-
-                for (let k = 0; k < arrCat[j].length; k ++ ) {
-
-                    if (arRand[i].id !== arrCat[j][k].id) {
-                        slides.push(<SwiperSlide key={"category" + k}><img src={arrCat[j][k][1]} alt={arrCat[j][k][2]} /></SwiperSlide>)
+        for (let j = 0; j < catLegnth; j ++) {
+            //console.log("hi")
+            let lengthofgroup = Object.values(arrCat)[j];
+            if (arRand[i][3] === Object.values(arrCat)[j][0].category) {
+                //console.log("working here")
+                for (let k = 0; k < lengthofgroup.length; k ++ ) {
+                    let srcs = Object.values(arrCat)[j][k].imagePath;
+                    let alts = Object.values(arrCat)[j][k].title;
+                    let cateogory = Object.values(arrCat)[j][k].category;
+                    if (arRand[i].id !== Object.values(arrCat)[j][k].id) {
+                        slides.push(<SwiperSlide key={"category" + k}><img src={srcs} alt={alts + ", " + cateogory} /></SwiperSlide>)
+                        
                     }
                 }
 
             }
         }
         
-
-        slideCategory.push(<SwiperSlide key={"categorySlidermain" + i}><Swiper key={"categorySlider" + i} className="swiper" loop={true} direction={"vertical"} draggable={true} nested={true}  >{slides}</Swiper></SwiperSlide>)
+        //console.log(slides)
+        slideCategory.push(<SwiperSlide key={"categorySlidermain" + i}><Swiper key={"categorySlider" + i} className="swiper" loop={true} direction={"vertical"} draggable={true} nested={true} preloadImages={true} >{slides}</Swiper></SwiperSlide>)
     }
     return (slideCategory)
 
@@ -98,28 +95,63 @@ function createSlider (arRand, arrCat) {
 
 console.log("this")
 //addToCategory(pathData, category2, uniqueCatogorys);
-const random = shuffleArray(artData);
+const random = shuffleArray(pathData);
 const catObj = groupBy(artData, "category");
-const sli = createSlider(random, catObj);
+console.log("category")
+console.log(catObj)
+let sli = createSlider(random, catObj);
 console.log(sli)
-let slide1 = sli[1];
+
 
 
 
 
 export default function App() {
 
+    function titleUpdate(index) {
+        console.log(index)
+        setShowElement(true)
+        if (typeof titleTimer !== 'undefined') {
+            // the variable is defined
+            clearTimeout(titleTimer);
+        }
+        slideTitle = pathData[index][2]; 
+        return slideTitle;
+    }
+    // changes title for slide change  
+    let [artTitle, setTitle] = useState(0);
+
+    // hides the title after x seconds 
+    const [showElement, setShowElement] = useState(true);
+    let titleTimer;
+    function titleDisapear() {   
+        titleTimer = setTimeout(function () {
+            setShowElement(false);
+        }, 10000);
+    }
+    
+    useEffect(() => {
+        //titleDisapear()
+    }, []);
+    
+    // for debugging title box print statment in on transition end 
+
 
 
     return (
         <div>
-            <Swiper id="categorySlider" className="swiper" preloadImages={true} loop={true} draggable={true} nested={true}>
+            <>
+            {showElement ? (<div className="titleBox"><div id="titleText" >{artTitle}</div></div>) : (<div></div>)}{" "}
+            <Swiper id="categorySlider" className="swiper" preloadImages={true} loop={true} draggable={true} nested={true} onTransitionEnd={titleDisapear()} onSlideChange={index => setTitle(titleUpdate(index.realIndex))}>
                 {sli}
             </Swiper>
+            </>
         </div>
 
     )
 
 
 }
+
+
 

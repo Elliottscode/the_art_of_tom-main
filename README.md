@@ -1,4 +1,4 @@
-# react_template_webpack_babel
+# The Art Of Tom 
 
 
 
@@ -10,4 +10,3 @@ Babel ass
 
 SASS
 
-Loaders 
